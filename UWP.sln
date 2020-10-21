@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "UWP", "SQL_Lite_exemple\UWP\bin\x86\Debug\AppX\UWP.exe", "{01BEDE60-7394-4948-88DA-C0EF6F1B8A60}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = D:\Nataliya\.NET\GIT_net\SQL_Lite_exemple\UWP\bin\x86\Debug\AppX\UWP.exe
+		RemoteMachine = DESKTOP-L4QSLAG
+		StartingDirectory = D:\Nataliya\.NET\GIT_net\SQL_Lite_exemple\UWP\bin\x86\Debug\AppX
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01BEDE60-7394-4948-88DA-C0EF6F1B8A60}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {847EBA07-D6B5-4735-8E2E-DB7E34FA2A83}
+	EndGlobalSection
+EndGlobal

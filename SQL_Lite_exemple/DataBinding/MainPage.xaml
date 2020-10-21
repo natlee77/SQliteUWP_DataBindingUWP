@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="DataBinding.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DataBinding"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:DataAccess_Library_UWP.Model"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <!--att binda en collection i  Source-hämta från viewmodel(main.cs)-->
+    <!--i main.sc ska vi skapa viewmodel, som redigera till ctor PersonViewModel-->
+    <Page.Resources>
+        <CollectionViewSource x:Name="PeopleCollection" Source="{x:Bind ViewModel.People}"/>
+        <models:StringFormatter x:Key="SFVC"/>
+    </Page.Resources>
+    
+    
+    <Grid>
+        <StackPanel>
+            <ListView x:Name="peopleListView" ItemsSource="{Binding Source={StaticResource PeopleCollection}}">
+                <!--en källa på alla personer-->
+                <!--staticResourse= finns redan here/ referera till PeopleCollection/ som referera till ViewModel.People-->
+                <ListView.ItemTemplate >
+                    <DataTemplate  x:DataType="models:Person">
+                        <StackPanel Orientation="Horizontal" >
+                            <!--ska simvolisera 1 person-->
+                            <TextBlock Text="{x:Bind DisplayName}"/>
+                            <Button x:Name="btnRemove" Content="X" Click="btnRemove_Click"/>
+                            <Button x:Name="btnAdd" Content="Add" Click="btnAdd_Click"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel DataContext="{Binding Source={StaticResource PeopleCollection}}" Margin="0,30,0,0">
+                <!--DataContext nån - en sak- actuel just nu-->
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text=" First name : "/>
+                    <TextBlock Text="{Binding FirstName}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text=" Last name : "/>
+                    <TextBlock Text="{Binding LastName}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text=" Birthday : "/>
+                    <TextBlock Text="{Binding DateOfBirth, Converter={StaticResource SFVC}, ConverterParameter=Date : \{0:d\}}"/> <!--ska convertera iclass data view-->
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
+        
+                
+        
+        
+    </Grid>
+</Page>
